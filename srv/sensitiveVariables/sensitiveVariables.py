@@ -27,3 +27,14 @@ class SensitiveVariables:
             "builder": 673240717782548494,
             "debug role": 1228330551044472943
         }
+        self.db_data = {
+            "host": os.getenv("DB_HOST"),
+            "user": os.getenv("DB_USER"),
+            "password": os.getenv("DB_PASSWORD"),
+            "database": os.getenv("DB_NAME")
+        }
+        print("Database configuration:", self.db_data)
+
+    @property
+    def database(self):
+        return self.db_data
